@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Bitter:400,400italic" rel="stylesheet" type="text/css"> -->
+    <link href="./stylesheets/style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- <link rel="import" href="header.html"> -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="loghead">
+            <a href="#" onclick="openmodal()" id="loginbtn">LOG IN/SIGN UP</a>
+            <a href="#" class="d-none" onclick="logoutfunction()" id="logout">LOG OUT</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="science.html">Science</a>
+            <a href="food.html">Food</a>
+            <a href="fashion.html">Fashion</a>
+        </nav>
+    </header>
+    <div id="hometitle">
+        <h2>Welcome to Blog</h2>
+    </div>
+    <div id="logmodal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeloginmodal()">&times;</span>
+            <form id="loginform">
+                <div class="form-group">
+                    <label for="username">User Name :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="text" class="form-control " id="uname">
+                    <p id="nameerrormsg"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="password" class="form-control " id="pass">
+                    <p id="passerrormsg"></p>
+                </div>
+                <!-- <div class=""></div> -->
+                <div class="btn-group">
+                    <span>New user? <a onclick="openregistermodal()">Resister here</a></span>
+                    <button class="btn" onclick="loginfunction()">LOG IN</button>
+                    <button class="btn" onclick="closeloginmodal()">CLOSE</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div id="registermodal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeregistermodal()">&times;</span>
+                <form id="registerform">
+                    <div class="form-group">
+                        <label for="username">User Name :
+                            <span class="mandatory">*</span>
+                        </label>
+                        <input type="text" class="form-control " id="name" oninput="myFunction()">
+                        <p id="nameerrormsg" class="d-none"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password :
+                            <span class="mandatory">*</span>
+                        </label>
+                        <input type="password" class="form-control " id="userpass">
+                        <p id="passerrormsg" class="d-none"></p>
+                    </div>
+                    <div class="form-group">
+                            <label for="confirmpassword">confirm Password :
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="password" class="form-control " id="confirmpass">
+                            <p id="confirmpasserrormsg" class="d-none"></p>
+                        </div>
+                    <div class="btn-group">
+                        <button class="btn" id="login" onclick="signup()">SIGN UP</button>
+                        <button class="btn"  onclick="closeregistermodal()">CLOSE</button>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+        <script src="./js/firebase.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

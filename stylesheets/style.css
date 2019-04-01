@@ -1,0 +1,298 @@
+/* line 1, ../sass/style.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 4, ../sass/style.scss */
+body {
+  margin: 0;
+  background: #000;
+  background-size: cover;
+  background-image: url(../assets/unsplash_5243a2eb2bc02_1-1024x680.jpg);
+}
+
+/* line 11, ../sass/style.scss */
+div#hometitle {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 17, ../sass/style.scss */
+header {
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: .4s;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+/* line 25, ../sass/style.scss */
+header:hover {
+  background: #e64152;
+  color: white;
+}
+/* line 32, ../sass/style.scss */
+header nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* line 39, ../sass/style.scss */
+header nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  font-size: 15px;
+}
+/* line 45, ../sass/style.scss */
+header div a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  font-size: 15px;
+}
+/* line 51, ../sass/style.scss */
+header .loghead {
+  text-align: right;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+
+/* line 57, ../sass/style.scss */
+h1 {
+  font-family: Moderne Sans, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  letter-spacing: .5rem;
+}
+
+/* line 64, ../sass/style.scss */
+h2 {
+  font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
+  font-size: 8vmin;
+  text-align: center;
+  margin: 2rem 3rem 0;
+  color: #fff;
+  font-weight: 100;
+}
+
+/* line 72, ../sass/style.scss */
+.tech-banner {
+  background-image: url("../assets/technology/techbanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+}
+
+/* line 78, ../sass/style.scss */
+.d-none {
+  display: none;
+}
+
+/* The Modal (background) */
+/* line 82, ../sass/style.scss */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Modal Content/Box */
+}
+/* line 95, ../sass/style.scss */
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+/* The Close Button */
+/* line 105, ../sass/style.scss */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+/* line 110, ../sass/style.scss */
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 117, ../sass/style.scss */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* line 125, ../sass/style.scss */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* line 129, ../sass/style.scss */
+.btn-group {
+  padding-top: 30px;
+  text-align: right;
+}
+/* line 132, ../sass/style.scss */
+.btn-group .registerdiv {
+  padding-right: 20px;
+  text-align: left;
+}
+/* line 135, ../sass/style.scss */
+.btn-group .registerdiv a {
+  color: #e64152;
+}
+/* line 139, ../sass/style.scss */
+.btn-group .btndiv {
+  padding-top: 20px;
+}
+
+/* line 144, ../sass/style.scss */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* line 151, ../sass/style.scss */
+.container .post {
+  text-align: right !important;
+  padding-right: 30px;
+}
+/* line 155, ../sass/style.scss */
+.container .successmessage {
+  text-align: center;
+}
+/* line 157, ../sass/style.scss */
+.container .successmessage #successmsg {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* line 164, ../sass/style.scss */
+#flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  padding-left: 40px;
+  flex: none;
+  flex-wrap: wrap;
+}
+/* line 172, ../sass/style.scss */
+#flex-container .card {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 0;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+  width: 300px;
+  margin: 45px;
+}
+/* line 190, ../sass/style.scss */
+#flex-container .card .card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+/* line 195, ../sass/style.scss */
+#flex-container .card img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 202, ../sass/style.scss */
+  form-group {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* line 206, ../sass/style.scss */
+  .modal-content {
+    width: 60% !important;
+  }
+}
+/* line 210, ../sass/style.scss */
+.btn {
+  background: #fff;
+  color: #e64152;
+  padding: 5px 20px;
+  border-radius: 0;
+}
+/* line 215, ../sass/style.scss */
+.btn:hover {
+  background: #e64152;
+  color: #ffffff;
+}
+
+/* line 220, ../sass/style.scss */
+.mandatory, .errormsg {
+  color: red;
+}
+
+/* line 223, ../sass/style.scss */
+.postTitle {
+  font-size: 20px;
+  padding: 10px 20px;
+}
+/* line 226, ../sass/style.scss */
+.postTitle h4 {
+  margin: 0;
+}
+
+/* line 230, ../sass/style.scss */
+.technology-author {
+  padding: 10px;
+}
+/* line 232, ../sass/style.scss */
+.technology-author div {
+  display: inline-block;
+}
+/* line 235, ../sass/style.scss */
+.technology-author .date {
+  display: inline-block;
+  padding-left: 115px !important;
+}
+/* line 239, ../sass/style.scss */
+.technology-author span {
+  padding-left: 15px;
+}
+
+/* line 243, ../sass/style.scss */
+.desc {
+  padding: 10px;
+}
+
+/* line 247, ../sass/style.scss */
+.icon {
+  display: none;
+}

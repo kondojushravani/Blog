@@ -1,0 +1,64 @@
+/* line 1, ../sass/modal.scss */
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear .25s,opacity .25s 0s,transform .25s;
+  z-index: 1;
+}
+
+/* line 14, ../sass/modal.scss */
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s,opacity .25s 0s,transform .25s;
+}
+
+/* line 20, ../sass/modal.scss */
+.modal {
+  font-family: Helvetica;
+  font-size: 14px;
+  padding: 10px 10px 5px 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  min-width: 300px;
+}
+
+/* line 32, ../sass/modal.scss */
+.title {
+  font-size: 18px;
+}
+
+/* line 35, ../sass/modal.scss */
+.button-container {
+  text-align: right;
+}
+
+/* line 38, ../sass/modal.scss */
+button {
+  min-width: 80px;
+  background-color: #848e97;
+  border-color: #848e97;
+  border-style: solid;
+  border-radius: 2px;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 48, ../sass/modal.scss */
+button:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}

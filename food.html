@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Bitter:400,400italic" rel="stylesheet" type="text/css"> -->
+    <link href="./stylesheets/style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- <link rel="import" href="header.html"> -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="loghead">
+            <a href="#" onclick="openmodal()" id="loginbtn">LOG IN/SIGN UP</a>
+            <a href="#" class="d-none" onclick="logoutfunction()" id="logout">LOG OUT</a>
+            <div id="userdetails">
+                <p id="currentuser"></p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="science.html">Science</a>
+            <a href="food.html">Food</a>
+            <a href="fashion.html">Fashion</a>
+        </nav>
+    </header>
+    <section id="tech-banner">
+
+    </section>
+    <div class="container">
+        <div class="successmessage">
+            <p id="successmsg"></p>
+        </div>
+        <div class="Post">
+            <button class="btn techpostbtn" id="newpost" onclick="opentechmodal()">New Post</button>
+        </div>
+        <div id="flex-container">
+
+        </div>
+    </div>
+    <div id="logmodal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeloginmodal()">&times;</span>
+            <span id="loginerrormsg"></span>
+            <form id="loginform">
+                <div class="form-group">
+                    <label for="username">User Name :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="text" class="form-control " id="uname">
+                    <p id="nameerrormsg" class="errormsg"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="password" class="form-control " id="pass">
+                    <p id="passerrormsg" class="errormsg"></p>
+                </div>
+                <div class="btn-group">
+                    <div class="registerdiv">New user?
+                        <a onclick="openregistermodal()">Resister here</a>
+                    </div>
+                    <div class="btndiv">
+                        <button class="btn" onclick="loginfunction()">LOG IN</button>
+                        <button class="btn" onclick="closeloginmodal()">CLOSE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div id="registermodal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeregistermodal()">&times;</span>
+            <span id="registererrormsg" class="errormsg"></span>
+            <form id="registerform">
+                <div class="form-group">
+                    <label for="displayname">Display Name :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="text" class="form-control " id="displayname">
+                    <!-- <p id="regnameerrormsg" class="errormsg"></p> -->
+                </div>
+                <div class="form-group">
+                    <label for="username">User Name :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="text" class="form-control " id="name">
+                    <!-- <p id="regnameerrormsg" class="errormsg"></p> -->
+                </div>
+                <div class="form-group">
+                    <label for="password">Password :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="password" class="form-control " id="userpass">
+                    <!-- <p id="passerrormsg" class="errormsg"></p> -->
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">confirm Password :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="password" class="form-control " id="confirmpass">
+                    <!-- <p id="confirmpasserrormsg" class="errormsg"></p> -->
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="login" onclick="signup()">SIGN UP</button>
+                    <button class="btn" onclick="closeregistermodal()">CLOSE</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div id="technologymodal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closetechmodal()">&times;</span>
+            <form id="technologyform">
+                <div class="form-group">
+                    <label for="titleforpost">Title For Post :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="text" class="form-control" id="techposttitle">
+                    <p id="titleerrormsg" class="errormsg"></p>
+                </div>
+                <div class="form-group">
+                    <label for="techdesc">Description :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <textarea rows="4" cols="50" id="techdesc"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="techfiles">Upload Image :
+                        <span class="mandatory">*</span>
+                    </label>
+                    <input type="file" id="files">
+                    <p id="imageerrormsg" class="errormsg"></p>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="login" onclick="posttech()">POST</button>
+                    <button class="btn" onclick="closetechmodal()">CLOSE</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/technology.js"></script>
+</body>
+
+</html>
