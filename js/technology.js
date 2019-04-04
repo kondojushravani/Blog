@@ -1,54 +1,11 @@
-var techmodal;
-var techpostArray ;
-var imagepath ;
-var currentuser = sessionStorage.getItem("user");
-var length ;
-var title,description,file,postedBy,postedDate;
-window.gettechnologydata("technology");
-window.checksession();
-
-function opentechmodal() {
-    techmodal = document.getElementById("technologymodal");
-    techmodal.style.display = "block";
-}
-function closetechmodal() {
-    techmodal.style.display = "none";
-}
-function posttech() {
-    title = document.getElementById("techposttitle").value;
-    description = document.getElementById("techdesc").value;
-    file = document.getElementById("files").files[0];
-    postedBy = currentuser;
-    postedDate = getCurrentDate();
-    var uploadTask = storageRef.child('technology/' + file.name).put(file);
-    uploadTask.then(snapshot => snapshot.ref.getDownloadURL())
-        .then((url) => {
-            imagepath = url ;
-            window.firebase.database().ref("technology/").on("value", function(snapshot){
-                length = snapshot.val().length;
-                console.log(length);
-            })
-            writeTechPostData(length,title, description,url,postedBy,postedDate);
-        })
-    document.getElementById("successmsg").innerText = 'Posted successfully';
-    setTimeout(() => { document.getElementById("successmsg").style.display = 'none'; }, 4000);
-}
- function writeTechPostData(length,title, desc,url,postedBy,postedDate){
-    firebase.database().ref('technology/'+"tech"+(length+1)).set({
-        postid : "tech"+(length+1),
-        postTitle :title,
-        description :desc,
-        imagepath :url,
-        postedBy :postedBy,
-        postedDate : postedDate,
-        category : "technology"
-      });
-      window.gettechnologydata("technology");
-      closetechmodal();
- }
-
- function editpost(event){
-     document.getElementById("login").style.display = "none";
+import { Firebase } from "../build/firebase.js"
+import { Main } from "../build/main.js"
+export {Technology}
+class Technology{
+    constructor(){
+    }
+ editpost(event){
+     document.getElementById("postbtn").style.display = "none";
     opentechmodal();
     var currentitem = event.target.offsetParent.id;
     var currentitemobj = {};
@@ -63,7 +20,7 @@ function posttech() {
     document.getElementById("techposttitle").value = currentitemobj.postTitle;
     document.getElementById("techdesc").value = currentitemobj.description;
  }
- function editingpost(){
+ editingpost(){
     title = document.getElementById("techposttitle").value;
     description = document.getElementById("techdesc").value;
     file = document.getElementById("files").files[0];
@@ -77,13 +34,26 @@ function posttech() {
                 postTitle :title,
                 description :description,
                 imagepath :url,
+                imageName : file.name,
                 postedBy :postedBy,
                 postedDate : postedDate,
                 category : "technology"  
             }
             window.firebase.database().ref('technology/'+title).update(obj);
         })
-        window.gettechnologydata("technology");
+        // window.gettechnologydata("technology");
     document.getElementById("successmsg").innerText = 'Edited successfully';
     setTimeout(() => { document.getElementById("successmsg").style.display = 'none'; }, 4000);
  }
+}
+
+const obj = new Technology();
+const mainobj = new Main();
+const firebaseobj = new Firebase();
+const techobj = new Technology();
+var techmodal;
+var techpostArray ;
+var imagepath ;
+var currentuser = sessionStorage.getItem("user");
+var length ;
+var title,description,file,postedBy,postedDate;
